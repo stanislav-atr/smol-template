@@ -4,7 +4,7 @@ import cleanup from 'rollup-plugin-cleanup';
 export default {
     input: './index.js',
     output: {
-        file: './dist/badoo-auto-filter.userscript.js',
+        file: './dist/bundle.js',
         format: 'cjs'
     },
     plugins: [
