@@ -1,1 +1,3 @@
-# rollup-template
+### smol-template
+- eslint (air-bnb)
+- rollup & webpack
