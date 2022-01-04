@@ -1,5 +1,6 @@
 import clear from 'rollup-plugin-clear';
 import cleanup from 'rollup-plugin-cleanup';
+import { terser } from "rollup-plugin-terser";
 
 export default {
     input: './index.js',
@@ -19,5 +20,7 @@ export default {
         cleanup({
             comments: 'eslint',
         }),
+        // Minify bundle
+        terser(),
     ],
 };
