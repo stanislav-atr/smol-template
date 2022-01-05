@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { add, substract } from './test';
 
 // comment
