@@ -1,26 +1,19 @@
+import typescript from '@rollup/plugin-typescript';
 import clear from 'rollup-plugin-clear';
-import cleanup from 'rollup-plugin-cleanup';
 import { terser } from "rollup-plugin-terser";
 
 export default {
-    input: './index.js',
+    input: 'src/app.ts',
     output: {
         file: './dist/bundle.js',
-        format: 'cjs'
+        format: 'cjs',
     },
     plugins: [
-        // Clean dist directory before bundling
         clear({
-            // required, point out which directories should be cleared.
             targets: ['dist'],
-            // optional, whether clear the directores when rollup recompile on --watch mode.
-            watch: true,
+            watch: true, // optional, whether clear the directores when rollup recompile on --watch mode.
         }),
-        // Don't include comments in bundle
-        cleanup({
-            comments: 'eslint',
-        }),
-        // Minify bundle
+        typescript(),
         terser(),
     ],
 };

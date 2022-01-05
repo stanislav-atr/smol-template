@@ -1,4 +1,5 @@
 ### smol-template
 - eslint (air-bnb)
-- rollup & webpack
+- rollup
+- typescript
 - .gitignore preset
