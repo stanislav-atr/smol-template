@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "build": "rollup -c rollup.config.js",
+        "watch": "rollup -c -w",
+        "build": "rollup -c",
         "go": "node ./dist/bundle.js",
         "lint": "eslint ./src"
     },
