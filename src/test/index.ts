@@ -1,1 +1,1 @@
-export { add, substract } from './test';
+export * from './tools';
