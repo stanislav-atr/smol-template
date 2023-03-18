@@ -57,5 +57,11 @@ module.exports = {
                 '@typescript-eslint/type-annotation-spacing': ['error', { before: false, after: true }],
             },
           },
+          {
+            files: ['*.html'],
+            parser: '@html-eslint/parser',
+            extends: ['plugin:@html-eslint/recommended'],
+            plugins: ['@html-eslint'],
+          },
     ],
 };
