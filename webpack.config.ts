@@ -1,19 +1,17 @@
 import type { Configuration, WebpackPluginInstance } from 'webpack';
-import path from 'path';
 import chalk from 'chalk';
 import CopyPlugin from 'copy-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import LicensePlugin from 'webpack-license-plugin';
-import { BUILD_DIR } from './constants';
+import { Path, ResourceWaypoint } from './constants';
 
 const { log } = console;
-
-const BUILD_PATH = path.resolve(__dirname, BUILD_DIR);
 
 const commonPlugins: WebpackPluginInstance[] = [
     new CopyPlugin({
         patterns: [
-            { from: './src/index.html', to: BUILD_PATH },
+            ResourceWaypoint.IndexPage,
+            ResourceWaypoint.Assets,
         ],
     }),
     new CleanWebpackPlugin({
@@ -25,7 +23,7 @@ const commonPlugins: WebpackPluginInstance[] = [
 const config: Configuration = {
     entry: './src/index.tsx',
     output: {
-        path: BUILD_PATH,
+        path: Path.Build,
         filename: 'bundle.js',
     },
     resolve: {

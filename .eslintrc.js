@@ -9,10 +9,12 @@ module.exports = {
         'airbnb-base',
         'eslint:recommended',
         'plugin:import/recommended',
+        'plugin:styled-components-a11y/recommended',
     ],
     plugins: [
         'import',
         'import-newlines',
+        'styled-components-a11y',
     ],
     rules: {
         indent: 'off',

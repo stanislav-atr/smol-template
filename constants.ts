@@ -1,27 +1,17 @@
+import path from 'path';
+
 const BUILD_DIR = 'dist';
-
-enum Target {
-    Tests = 'tests',
-    Bundle = 'bundle',
-}
-
-enum Channel {
-    Dev = 'development',
-    Release = 'production',
-}
+const Path = {
+    Build: path.resolve(__dirname, BUILD_DIR),
+} as const;
 
 // Map of resources to copy into bundle
-const RESOURCE_WAYPOINTS = [
-    /* Build results */
-    { src: 'test/build/*', dest: '/test/build' },
-    /* Tests page */
-    { src: 'test/index.html', dest: '/test' },
-    /* External resources */
-];
+const ResourceWaypoint = {
+    IndexPage: { from: './src/index.html', to: Path.Build },
+    Assets: { from: 'src/assets', to: Path.Build },
+} as const;
 
 export {
-    BUILD_DIR,
-    Target,
-    Channel,
-    RESOURCE_WAYPOINTS,
+    Path,
+    ResourceWaypoint,
 };
