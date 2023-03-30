@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 const Screen = styled.div`
@@ -22,11 +22,17 @@ const Container = styled.div`
     flex-flow: row-reverse wrap-reverse;
 `;
 
-export const App: React.FunctionComponent = () => (
-    <>
-        <Screen />
-        <Container>
-            <Splash src="join.svg" alt="Welcome" />
-        </Container>
-    </>
-);
+export const App: React.FunctionComponent = () => {
+    useEffect(() => {
+        // eslint-disable-next-line no-console
+        console.log('Everything is working!');
+    }, []);
+    return (
+        <>
+            <Screen />
+            <Container>
+                <Splash src="join.svg" alt="Welcome" />
+            </Container>
+        </>
+    );
+};

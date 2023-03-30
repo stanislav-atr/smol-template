@@ -6,5 +6,4 @@
 – add styled-components
 – set up stylelint for styled-components
 - optimize bundling: react hot serve
-– source maps
-– add global style
+– add global style?

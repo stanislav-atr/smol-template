@@ -21,6 +21,7 @@ const commonPlugins: WebpackPluginInstance[] = [
 ];
 
 const config: Configuration = {
+    devtool: 'source-map',
     entry: './src/index.tsx',
     output: {
         path: Path.Build,
@@ -35,6 +36,11 @@ const config: Configuration = {
                 test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
                 use: 'ts-loader',
+            },
+            {
+                test: /\.js$/,
+                enforce: 'pre',
+                use: ['source-map-loader'],
             },
         ],
     },
